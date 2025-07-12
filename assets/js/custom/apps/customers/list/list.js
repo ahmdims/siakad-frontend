@@ -1,138 +1,133 @@
+/**
+ * SIAKAD - Dashboard Mahasiswa Custom JS
+ * Universitas Muhammadiyah Ponorogo
+ */
+
 "use strict";
-var KTCustomersList = function () {
-    var t, e, o, n, c = () => {
-            n.querySelectorAll('[data-kt-customer-table-filter="delete_row"]').forEach((e => {
-                e.addEventListener("click", (function (e) {
-                    e.preventDefault();
-                    const o = e.target.closest("tr"),
-                        n = o.querySelectorAll("td")[1].innerText;
-                    Swal.fire({
-                        text: "Are you sure you want to delete " + n + "?",
-                        icon: "warning",
-                        showCancelButton: !0,
-                        buttonsStyling: !1,
-                        confirmButtonText: "Yes, delete!",
-                        cancelButtonText: "No, cancel",
-                        customClass: {
-                            confirmButton: "btn fw-bold btn-danger",
-                            cancelButton: "btn fw-bold btn-active-light-primary"
-                        }
-                    }).then((function (e) {
-                        e.value ? Swal.fire({
-                            text: "You have deleted " + n + "!.",
-                            icon: "success",
-                            buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn fw-bold btn-primary"
-                            }
-                        }).then((function () {
-                            t.row($(o)).remove().draw()
-                        })) : "cancel" === e.dismiss && Swal.fire({
-                            text: n + " was not deleted.",
-                            icon: "error",
-                            buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn fw-bold btn-primary"
-                            }
-                        })
-                    }))
-                }))
-            }))
-        },
-        r = () => {
-            const e = n.querySelectorAll('[type="checkbox"]'),
-                o = document.querySelector('[data-kt-customer-table-select="delete_selected"]');
-            e.forEach((t => {
-                t.addEventListener("click", (function () {
-                    setTimeout((function () {
-                        l()
-                    }), 50)
-                }))
-            })), o.addEventListener("click", (function () {
-                Swal.fire({
-                    text: "Are you sure you want to delete selected customers?",
-                    icon: "warning",
-                    showCancelButton: !0,
-                    buttonsStyling: !1,
-                    confirmButtonText: "Yes, delete!",
-                    cancelButtonText: "No, cancel",
-                    customClass: {
-                        confirmButton: "btn fw-bold btn-danger",
-                        cancelButton: "btn fw-bold btn-active-light-primary"
-                    }
-                }).then((function (o) {
-                    o.value ? Swal.fire({
-                        text: "You have deleted all selected customers!.",
-                        icon: "success",
-                        buttonsStyling: !1,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn fw-bold btn-primary"
-                        }
-                    }).then((function () {
-                        e.forEach((e => {
-                            e.checked && t.row($(e.closest("tbody tr"))).remove().draw()
-                        }));
-                        n.querySelectorAll('[type="checkbox"]')[0].checked = !1
-                    })) : "cancel" === o.dismiss && Swal.fire({
-                        text: "Selected customers was not deleted.",
-                        icon: "error",
-                        buttonsStyling: !1,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn fw-bold btn-primary"
-                        }
-                    })
-                }))
-            }))
-        };
-    const l = () => {
-        const t = document.querySelector('[data-kt-customer-table-toolbar="base"]'),
-            e = document.querySelector('[data-kt-customer-table-toolbar="selected"]'),
-            o = document.querySelector('[data-kt-customer-table-select="selected_count"]'),
-            c = n.querySelectorAll('tbody [type="checkbox"]');
-        let r = !1,
-            l = 0;
-        c.forEach((t => {
-            t.checked && (r = !0, l++)
-        })), r ? (o.innerHTML = l, t.classList.add("d-none"), e.classList.remove("d-none")) : (t.classList.remove("d-none"), e.classList.add("d-none"))
+
+// Class definition
+var KTAppMahasiswaDashboard = function() {
+    // Private variables
+    var table;
+
+    // Private functions
+    var initPaymentTable = function() {
+        // Initialize DataTable for payment status
+        table = $('#kt_payment_table').DataTable({
+            responsive: true,
+            language: {
+                lengthMenu: "Tampilkan _MENU_ data",
+                search: "_INPUT_",
+                searchPlaceholder: "Cari tagihan...",
+                info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ tagihan",
+                paginate: {
+                    previous: "<i class='ki-duotone ki-arrow-left fs-3'></i>",
+                    next: "<i class='ki-duotone ki-arrow-right fs-3'></i>"
+                }
+            },
+            dom: '<"top"f>rt<"bottom"ip><"clear">',
+            pageLength: 10,
+            order: [[0, 'asc']],
+            columnDefs: [
+                { orderable: false, targets: [0, 4] }, // Disable sorting on No and Status columns
+                { className: "text-center", targets: [0, 4] }, // Center align No and Status
+                { width: "5%", targets: 0 }, // No column width
+                { width: "20%", targets: 3 } // Amount column width
+            ],
+            drawCallback: function() {
+                // Update badge colors based on status
+                $('.badge-light-success').addClass('bg-success text-white');
+                $('.badge-light-warning').addClass('bg-warning text-white');
+            }
+        });
+
+        // Add filter for payment status
+        $('#kt_payment_filter').on('change', function() {
+            const status = $(this).val();
+            if (status === 'all') {
+                table.search('').columns().search('').draw();
+            } else {
+                table.column(4).search(status).draw();
+            }
+        });
     };
+
+    var initPrintButton = function() {
+        $('#kt_print_btn').on('click', function(e) {
+            e.preventDefault();
+            
+            // Create a print-friendly version of the table
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Status Pembayaran Mahasiswa</title>
+                        <style>
+                            body { font-family: Arial; margin: 20px; }
+                            h1 { color: #2b2b2b; margin-bottom: 20px; }
+                            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+                            th { background-color: #f5f8fa; text-align: left; padding: 8px; border: 1px solid #ddd; }
+                            td { padding: 8px; border: 1px solid #ddd; }
+                            .badge { padding: 3px 6px; border-radius: 4px; font-size: 12px; }
+                            .success { background-color: #50cd89; color: white; }
+                            .warning { background-color: #ffc700; color: white; }
+                            .text-center { text-align: center; }
+                            .text-right { text-align: right; }
+                            .footer { margin-top: 30px; font-size: 12px; text-align: center; }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Status Pembayaran Mahasiswa</h1>
+                        ${$('#kt_payment_table').clone().removeAttr('id').prop('outerHTML')}
+                        <div class="footer">
+                            Dicetak dari SIAKAD Universitas Muhammadiyah Ponorogo<br>
+                            Tanggal: ${new Date().toLocaleDateString('id-ID')}
+                        </div>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        });
+    };
+
+    var initTotalCalculation = function() {
+        // Calculate and display totals
+        const paidTotal = 5250000;
+        const unpaidTotal = 4500000;
+        
+        $('#kt_payment_paid_total').text(formatCurrency(paidTotal));
+        $('#kt_payment_unpaid_total').text(formatCurrency(unpaidTotal));
+    };
+
+    var formatCurrency = function(amount) {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+            minimumFractionDigits: 0
+        }).format(amount);
+    };
+
+    // Public methods
     return {
-        init: function () {
-            (n = document.querySelector("#kt_customers_table")) && (n.querySelectorAll("tbody tr").forEach((t => {
-                const e = t.querySelectorAll("td"),
-                    o = moment(e[5].innerHTML, "DD MMM YYYY, LT").format();
-                e[5].setAttribute("data-order", o)
-            })), (t = $(n).DataTable({
-                info: !1,
-                order: [],
-                columnDefs: [{
-                    orderable: !1,
-                    targets: 0
-                }, {
-                    orderable: !1,
-                    targets: 6
-                }]
-            })).on("draw", (function () {
-                r(), c(), l(), KTMenu.init()
-            })), r(), document.querySelector('[data-kt-customer-table-filter="search"]').addEventListener("keyup", (function (e) {
-                t.search(e.target.value).draw()
-            })), e = $('[data-kt-customer-table-filter="month"]'), o = document.querySelectorAll('[data-kt-customer-table-filter="payment_type"] [name="payment_type"]'), document.querySelector('[data-kt-customer-table-filter="filter"]').addEventListener("click", (function () {
-                const n = e.val();
-                let c = "";
-                o.forEach((t => {
-                    t.checked && (c = t.value), "all" === c && (c = "")
-                }));
-                const r = n + " " + c;
-                t.search(r).draw()
-            })), c(), document.querySelector('[data-kt-customer-table-filter="reset"]').addEventListener("click", (function () {
-                e.val(null).trigger("change"), o[0].checked = !0, t.search("").draw()
-            })))
+        init: function() {
+            initPaymentTable();
+            initPrintButton();
+            initTotalCalculation();
+            
+            // Initialize tooltips
+            $('[data-bs-toggle="tooltip"]').tooltip();
         }
-    }
+    };
 }();
-KTUtil.onDOMContentLoaded((function () {
-    KTCustomersList.init()
-}));
+
+// On document ready
+if (typeof KTUtil !== 'undefined') {
+    KTUtil.onDOMContentLoaded(function() {
+        KTAppMahasiswaDashboard.init();
+    });
+} else {
+    document.addEventListener('DOMContentLoaded', function() {
+        KTAppMahasiswaDashboard.init();
+    });
+}
