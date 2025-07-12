@@ -20,6 +20,7 @@ var KTNilaiMahasiswa = function() {
         // Init datatable
         datatable = $(table).DataTable({
             "info": false,
+            "paging": false,
             "lengthChange": false,
              "searching": false, 
             'order': [],
