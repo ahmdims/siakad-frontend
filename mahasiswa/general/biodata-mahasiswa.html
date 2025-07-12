@@ -91,9 +91,7 @@
                                 <!--begin::Form(use d-none d-lg-block classes for responsive search)-->
                                 <form data-kt-search-element="form"
                                     class="d-none d-lg-block w-100 position-relative mb-5 mb-lg-0" autocomplete="off">
-                                    <!--begin::Hidden input(Added to disable form autocomplete)-->
                                     <input type="hidden" />
-                                    <!--end::Hidden input-->
                                     <!--begin::Icon-->
                                     <i
                                         class="ki-outline ki-magnifier search-icon fs-2 text-gray-500 position-absolute top-50 translate-middle-y ms-5"></i>
@@ -1240,30 +1238,352 @@
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid">
-                                <h2 class="text-dark fw-bold mb-5 text-center">Kalender Tahun Ajaran 2025/2026</h2>
+                                <h2 class="text-dark fw-bold mb-5 text-center">Biodata Mahasiswa</h2>
+                                <form>
+                                    <!-- Wrapper Card -->
+                                    <div class="card p-5 shadow-sm">
 
-                                <!-- Card untuk kalender -->
-                                <div class="card-body p-0">
-                                    <!-- Image kalender -->
-                                    <div class="text-center p-5">
-                                        <img src="../../assets/media/kalender/kalender-example.jpeg"
-                                            alt="Kalender Akademik 2025/2026" class="img-fluid rounded border"
-                                            style="max-height: 800px;">
-                                    </div>
+                                        <!-- Data Diri Mahasiswa -->
+                                        <div class="card mb-10 shadow-sm">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Data Diri Mahasiswa</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <!-- Form Fields -->
+                                                <div class="row mb-10">
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Nama
+                                                            Lengkap</label>
+                                                        <input type="text" name="nama"
+                                                            class="form-control form-control-solid"
+                                                            placeholder="Nama lengkap" />
+                                                    </div>
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">NIK</label>
+                                                        <input type="text" name="nik"
+                                                            class="form-control form-control-solid"
+                                                            placeholder="Nomor Induk Kependudukan" />
+                                                    </div>
+                                                </div>
 
-                                    <!-- Tombol download -->
-                                    <div class="card-footer text-center py-4">
-                                        <a href="#" class="btn btn-success">
-                                            <i class="ki-duotone ki-chart-simple-2 fs-2 me-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                                <span class="path3"></span>
-                                                <span class="path4"></span>
-                                            </i>
-                                            Download Kalender
-                                        </a>
-                                    </div>
-                                </div>
+                                                <div class="row mb-10">
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Tempat
+                                                            Lahir</label>
+                                                        <input type="text" name="tempat_lahir"
+                                                            class="form-control form-control-solid"
+                                                            placeholder="Kota kelahiran" />
+                                                    </div>
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Tanggal
+                                                            Lahir</label>
+                                                        <input type="text" id="kt_datepicker_tanggal_lahir"
+                                                            name="tanggal_lahir" class="form-control form-control-solid"
+                                                            placeholder="Masukkan tanggal lahir" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-10">
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Jenis
+                                                            Kelamin</label>
+                                                        <select class="form-select form-select-solid"
+                                                            name="jenis_kelamin" data-control="select2"
+                                                            data-placeholder="Pilih jenis kelamin">
+                                                            <option></option>
+                                                            <option value="L">Laki-laki</option>
+                                                            <option value="P">Perempuan</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Agama</label>
+                                                        <select class="form-select form-select-solid" name="agama"
+                                                            data-control="select2" data-placeholder="Pilih agama">
+                                                            <option></option>
+                                                            <option value="Islam">Islam</option>
+                                                            <option value="Kristen">Kristen</option>
+                                                            <option value="Katolik">Katolik</option>
+                                                            <option value="Hindu">Hindu</option>
+                                                            <option value="Buddha">Buddha</option>
+                                                            <option value="Konghucu">Konghucu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Upload Gambar: KTP, KK, Akte -->
+                                                <div class="row mb-5">
+                                                    <div class="col-md-4 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Upload KTP</label>
+                                                        <div class="image-input image-input-outline"
+                                                            data-kt-image-input="true">
+                                                            <!-- Preview wrapper -->
+                                                            <div class="image-input-wrapper w-100px h-100px"
+                                                                style="background-image: none"></div>
+
+                                                            <!-- Change button -->
+                                                            <label
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="change"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Pilih gambar">
+                                                                <i class="bi bi-pencil-fill fs-6"></i>
+                                                                <input type="file" name="ktp"
+                                                                    accept=".png, .jpg, .jpeg" />
+                                                                <input type="hidden" name="ktp_remove" />
+                                                            </label>
+
+                                                            <!-- Cancel button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="cancel"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Batalkan gambar">
+                                                                <i class="bi bi-x-lg fs-3"></i>
+                                                            </span>
+
+                                                            <!-- Remove button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="remove"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Hapus gambar">
+                                                                <i class="bi bi-trash fs-3"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Upload KK</label>
+                                                        <div class="image-input image-input-outline"
+                                                            data-kt-image-input="true">
+                                                            <!-- Preview wrapper -->
+                                                            <div class="image-input-wrapper w-100px h-100px"
+                                                                style="background-image: none"></div>
+
+                                                            <!-- Change button -->
+                                                            <label
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="change"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Pilih gambar">
+                                                                <i class="bi bi-pencil-fill fs-6"></i>
+                                                                <input type="file" name="ktp"
+                                                                    accept=".png, .jpg, .jpeg" />
+                                                                <input type="hidden" name="ktp_remove" />
+                                                            </label>
+
+                                                            <!-- Cancel button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="cancel"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Batalkan gambar">
+                                                                <i class="bi bi-x-lg fs-3"></i>
+                                                            </span>
+
+                                                            <!-- Remove button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="remove"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Hapus gambar">
+                                                                <i class="bi bi-trash fs-3"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Upload
+                                                            Akte</label>
+                                                        <div class="image-input image-input-outline"
+                                                            data-kt-image-input="true">
+                                                            <!-- Preview wrapper -->
+                                                            <div class="image-input-wrapper w-100px h-100px"
+                                                                style="background-image: none"></div>
+
+                                                            <!-- Change button -->
+                                                            <label
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="change"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Pilih gambar">
+                                                                <i class="bi bi-pencil-fill fs-6"></i>
+                                                                <input type="file" name="ktp"
+                                                                    accept=".png, .jpg, .jpeg" />
+                                                                <input type="hidden" name="ktp_remove" />
+                                                            </label>
+
+                                                            <!-- Cancel button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="cancel"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Batalkan gambar">
+                                                                <i class="bi bi-x-lg fs-3"></i>
+                                                            </span>
+
+                                                            <!-- Remove button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="remove"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Hapus gambar">
+                                                                <i class="bi bi-trash fs-3"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Data Orang Tua -->
+                                        <div class="card mb-10 shadow-sm">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Data Orang Tua</h3>
+                                            </div>
+                                            <div class="card-body">
+                                                <!-- Ayah -->
+                                                <h4 class="text-dark fw-bold mb-5">Ayah</h4>
+                                                <div class="row mb-10">
+                                                    <div class="col-md-6 fv-row">
+                                                     <label class="required fw-semibold fs-6 mb-2">Nama Ayah</label>
+                                                    <input type="text" name="nama_ayah"
+                                                        class="form-control form-control-solid"
+                                                        placeholder="Nama lengkap ayah" />
+                                                    </div>
+
+                                                    <div class="col-md-6 fv-row">
+                                                    <label class="required fw-semibold fs-6 mb-2">NIK Ayah</label>
+                                                    <input type="text" name="nik_ayah"
+                                                        class="form-control form-control-solid"
+                                                        placeholder="Nomor Induk Kependudukan ayah" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="fv-row mb-10">
+                                                <div class="col-md-4 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Upload KTP</label>
+                                                        <div class="image-input image-input-outline"
+                                                            data-kt-image-input="true">
+                                                            <!-- Preview wrapper -->
+                                                            <div class="image-input-wrapper w-100px h-100px"
+                                                                style="background-image: none"></div>
+
+                                                            <!-- Change button -->
+                                                            <label
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="change"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Pilih gambar">
+                                                                <i class="bi bi-pencil-fill fs-6"></i>
+                                                                <input type="file" name="ktp"
+                                                                    accept=".png, .jpg, .jpeg" />
+                                                                <input type="hidden" name="ktp_remove" />
+                                                            </label>
+
+                                                            <!-- Cancel button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="cancel"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Batalkan gambar">
+                                                                <i class="bi bi-x-lg fs-3"></i>
+                                                            </span>
+
+                                                            <!-- Remove button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="remove"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Hapus gambar">
+                                                                <i class="bi bi-trash fs-3"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Ibu -->
+                                                <h4 class="text-dark fw-bold mb-5 mt-10">Ibu</h4>
+
+                                                <div class="row mb-10">
+                                                    <div class="col-md-6 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Nama Ibu</label>
+                                                        <input type="text" name="nama_ibu"
+                                                            class="form-control form-control-solid"
+                                                            placeholder="Nama lengkap ibu" />
+                                                    </div>
+                                                    <div class="col-md-6 fv-row">
+                                                    Nik ibu
+                                                        <label class="required fw-semibold fs-6 mb-2">NIK Ibu</label>
+                                                        <input type="text" name="nik_ibu"
+                                                            class="form-control form-control-solid"
+                                                            placeholder="Nomor Induk Kependudukan ibu" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="fv-row mb-10">
+                                                    <label class="required fw-semibold fs-6 mb-2">NIK Ibu</label>
+                                                    <input type="text" name="nik_ibu"
+                                                        class="form-control form-control-solid"
+                                                        placeholder="Nomor Induk Kependudukan ibu" />
+                                                </div>
+
+                                                <div class="fv-row mb-10">
+                                                    <div class="col-md-4 fv-row">
+                                                        <label class="required fw-semibold fs-6 mb-2">Upload KTP</label>
+                                                        <div class="image-input image-input-outline"
+                                                            data-kt-image-input="true">
+                                                            <!-- Preview wrapper -->
+                                                            <div class="image-input-wrapper w-100px h-100px"
+                                                                style="background-image: none"></div>
+
+                                                            <!-- Change button -->
+                                                            <label
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="change"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Pilih gambar">
+                                                                <i class="bi bi-pencil-fill fs-6"></i>
+                                                                <input type="file" name="ktp"
+                                                                    accept=".png, .jpg, .jpeg" />
+                                                                <input type="hidden" name="ktp_remove" />
+                                                            </label>
+
+                                                            <!-- Cancel button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="cancel"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Batalkan gambar">
+                                                                <i class="bi bi-x-lg fs-3"></i>
+                                                            </span>
+
+                                                            <!-- Remove button -->
+                                                            <span
+                                                                class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                                                data-kt-image-input-action="remove"
+                                                                data-bs-toggle="tooltip" data-bs-dismiss="click"
+                                                                title="Hapus gambar">
+                                                                <i class="bi bi-trash fs-3"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <div class="d-flex justify-content-end">
+                                            <button type="reset" class="btn btn-light me-3">Reset</button>
+                                            <button type="submit" id="submitBtn" class="btn btn-primary">
+                                                <span class="indicator-label">Submit</span>
+                                            </button>
+                                        </div>
+
+                                    </div> <!-- End Card Wrapper -->
+                                </form>
+
                             </div>
                             <!--end::Content container-->
                         </div>
@@ -1311,24 +1631,29 @@
     </div>
     <!--end::Scrolltop-->
     <!--begin::Javascript-->
-    <!-- 1. Core Libraries -->
+    <!-- 1. jQuery (Harus di load pertama) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 2. Core Libraries -->
     <script src="../../assets/plugins/global/plugins.bundle.js"></script>
     <script src="../../assets/js/scripts.bundle.js"></script>
 
-    <!-- 2. jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 3. Library Tambahan yang Dibutuhkan -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-    <!-- 3. Keen Theme -->
+    <!-- 4. Keen Theme -->
     <script src="../../assets/js/widgets.bundle.js"></script>
     <script src="../../assets/js/custom/widgets.js"></script>
 
-    <!-- 4. DataTables -->
+    <!-- 5. DataTables -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/id.json"></script> <!-- Jika butuh bahasa Indonesia -->
 
-    <!-- 5. Aplikasi -->
+    <!-- 6. Aplikasi -->
     <script src="../../assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="../../assets/js/custom/utilities/modals/users-search.js"></script>
-    <script src="../../assets/js/custom/apps/mahasiswa/akademik/kalender.js"></script>
+    <script src="../../assets/js/custom/apps/mahasiswa/general/biodata-mahasiswa.js"></script>
 </body>
 
 </html>
