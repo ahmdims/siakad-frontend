@@ -173,7 +173,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -213,7 +213,7 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="../../mahasiswa/akademik/riwayat-kelas.html">
+                                            <a class="menu-link active" href="../../mahasiswa/general/riwayat-kelas.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -226,7 +226,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -287,7 +287,7 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link active" href="../../mahasiswa/akademik/presensi.html">
+                                            <a class="menu-link" href="../../mahasiswa/akademik/presensi.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -321,138 +321,102 @@
                                                 class="text-hover-primary">Siakad</a>
                                         </li>
                                         <li class="breadcrumb-item">
-                                            <a href="../../mahasiswa/akademik/nilai.html"
-                                                class="text-hover-primary">Akademik</a>
+                                            <a href="../../mahasiswa/general/riwayat-kelas.html"
+                                                class="text-hover-primary">General</a>
                                         </li>
-                                        <li class="breadcrumb-item text-muted">Nilai</li>
+                                        <li class="breadcrumb-item text-muted">Riwayat kelas</li>
                                     </ol>
                                 </div>
-                                <h2 class="text-dark fw-bold mb-5">Presensi Mahasiswa</h2>
-                                <div class="row mb-5">
-                                    <div class="row mb-5">
-                                        <div class="col-md-4 justify-content-end">
-                                            <label class="form-label fw-semibold text-gray-600"></label>
-                                            <select class="form-select" data-control="select2"
-                                                data-placeholder="Pilih Semester">
-                                                <option></option>
-                                                <option value="1">Semester 1</option>
-                                                <option value="2">Semester 2</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <div class="table-responsive">
-    <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_presensi_table">
-        <thead>
-            <tr class="text-start text-gray-600 fw-bold text-uppercase">
-                <th style="width: 5%;">No</th>
-                <th style="width: 30%;">Mata Kuliah</th>
-                <th style="width: 15%;">Pertemuan</th>
-                <th style="width: 15%;">Tanggal</th>
-                <th style="width: 15%;">Keterangan</th>
-            </tr>
-        </thead>
-        <tbody class="fw-semibold text-gray-600">
-            <tr>
-                <td>1</td>
-                <td>Algoritma & Pemrograman</td>
-                <td>Pertemuan 1</td>
-                <td>10/01/2023</td>
-                <td><span class="badge badge-light-primary">Sakit</span></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Algoritma & Pemrograman</td>
-                <td>Pertemuan 2</td>
-                <td>17/01/2023</td>
-                <td><span class="badge badge-light-warning">Ijin</span></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Struktur Data</td>
-                <td>Pertemuan 1</td>
-                <td>11/01/2023</td>
-                <td><span class="badge badge-light-danger">Alpha</span></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Struktur Data</td>
-                <td>Pertemuan 2</td>
-                <td>18/01/2023</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Basis Data</td>
-                <td>Pertemuan 1</td>
-                <td>12/01/2023</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Basis Data</td>
-                <td>Pertemuan 2</td>
-                <td>19/01/2023</td>
-                <td><span class="badge badge-light-warning">Ijin</span></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Jaringan Komputer</td>
-                <td>Pertemuan 1</td>
-                <td>13/01/2023</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Jaringan Komputer</td>
-                <td>Pertemuan 2</td>
-                <td>20/01/2023</td>
-                <td><span class="badge badge-light-danger">Alpha</span></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
+                                <h2 class="text-dark fw-bold mb-5">Riwayat Kelas</h2>
+                                <div class="table-responsive mb-0">
+                                    <table class="table table-rounded table-striped border gy-7 gs-7"
+                                        id="kt_riwayat_kelas_table">
+                                        <thead>
+                                            <tr class="text-start text-gray-600 fw-bold text-uppercase">
+                                                <th style="width: 5%;">No</th>
+                                                <th style="width: 20%;">Tahun Semester</th>
+                                                <th style="width: 15%;">Kelas</th>
+                                                <th style="width: 15%;">Status</th>
+                                                <th style="width: 15%;">Pembiayaan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fw-semibold text-gray-600">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2023/2024 - Ganjil</td>
+                                                <td>A - TI</td>
+                                                <td><span class="badge badge-light-success">Aktif</span></td>
+                                                <td>Reguler</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>2022/2023 - Genap</td>
+                                                <td>B - TI</td>
+                                                <td><span class="badge badge-light-success">Aktif</span></td>
+                                                <td>Reguler</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2022/2023 - Ganjil</td>
+                                                <td>A - TI</td>
+                                                <td><span class="badge badge-light-success">Aktif</span></td>
+                                                <td>Reguler</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>2021/2022 - Genap</td>
+                                                <td>C - TI</td>
+                                                <td><span class="badge badge-light-warning">Cuti</span></td>
+                                                <td>Reguler</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>2021/2022 - Ganjil</td>
+                                                <td>A - TI</td>
+                                                <td><span class="badge badge-light-success">Aktif</span></td>
+                                                <td>Reguler</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <!--end::Content container-->
                         </div>
-                        <!--end::Content-->
+                        <!--end::Content container-->
                     </div>
-                    <!--end::Content wrapper-->
+                    <!--end::Content-->
+                </div>
+                <!--end::Content wrapper-->
 
-                    <!--begin::Footer-->
+
+                <!--begin::Footer-->
                     <div id="kt_app_footer" class="app-footer">
                         <div
                             class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
                             <div class="text-dark order-2 order-md-1">
-                                <span class="text-muted fw-semibold me-1"></span>
-                                <a href="" target="_blank"
-                                    class="text-gray-800 text-hover-primary"></a>
+                                <span class="text-muted fw-semibold me-1">Copyright @ STIT Muhamadiyah Bangil </span>
                             </div>
                             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                                 <li class="menu-item">
-                                    <a href="" target="_blank" class="menu-link px-2">About</a>
+                                    <a href="" target="_blank" class="menu-link px-2">Profil</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="" target="_blank"
-                                        class="menu-link px-2">Support</a>
+                                        class="menu-link px-2">FAQ</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="" target="_blank"
-                                        class="menu-link px-2">Social Media</a>
+                                        class="menu-link px-2">Kebijakan Privasi</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!--end::Footer-->
-                </div>
-                <!--end:::Main-->
+                <!--end::Footer-->
             </div>
-            <!--end::Wrapper-->
+            <!--end:::Main-->
         </div>
-        <!--end::Page-->
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
     </div>
     <!--end::App-->
 
@@ -461,25 +425,25 @@
         <i class="ki-outline ki-arrow-up"></i>
     </div>
     <!--end::Scrolltop-->
-    <!-- 1. jQuery (harus di-load pertama) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- 2. Core Libraries -->
+    <!--begin::Javascript-->
+    <!-- 1. Core Libraries -->
     <script src="../../assets/plugins/global/plugins.bundle.js"></script>
     <script src="../../assets/js/scripts.bundle.js"></script>
 
-    <!-- 3. DataTables -->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- 2. jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- 4. Keen Theme -->
+    <!-- 3. Keen Theme -->
     <script src="../../assets/js/widgets.bundle.js"></script>
     <script src="../../assets/js/custom/widgets.js"></script>
+
+    <!-- 4. DataTables -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
     <!-- 5. Aplikasi -->
     <script src="../../assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="../../assets/js/custom/utilities/modals/users-search.js"></script>
-    <script src="../../assets/js/custom/apps/mahasiswa/akademik/presensi.js"></script>
-
+    <script src="../../assets/js/custom/apps/mahasiswa/general/riwayat-kelas.js"></script>
 </body>
 
 </html>
