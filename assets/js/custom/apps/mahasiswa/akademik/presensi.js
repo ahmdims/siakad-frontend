@@ -82,14 +82,6 @@ var KTPresensi = function () {
         });
     }
 
-    // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
-    var handleSearchDatatable = () => {
-        const filterSearch = document.querySelector('[data-kt-filter="search"]');
-        filterSearch.addEventListener('keyup', function (e) {
-            datatable.search(this.value).draw();
-        });
-    }
-
     // Public methods
     return {
         init: function () {
@@ -101,7 +93,6 @@ var KTPresensi = function () {
 
             initDatatable();
             exportButtons();
-            handleSearchDatatable();
         }
     };
 }();

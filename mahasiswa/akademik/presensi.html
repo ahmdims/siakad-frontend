@@ -791,6 +791,7 @@
                                                 data-kt-search-element="preferences-dismiss">Cancel</button>
                                             <button type="submit" class="btn btn-sm fw-bold btn-primary">Save
                                                 Changes</button>
+                                            
                                         </div>
                                         <!--end::Actions-->
                                     </form>
@@ -1087,12 +1088,23 @@
                             <!--begin::Sidebar menu-->
                             <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false"
                                 class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary px-3 mb-5">
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="../../mahasiswa/beranda/beranda.html">
+                                        <span class="menu-icon">
+                                            <i class="ki-outline ki-home-2 fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Beranda</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
-                                            <i class="ki-outline ki-home-2 fs-2"></i>
+                                            <i class="ki-outline ki-element-11 fs-2"></i>
                                         </span>
                                         <span class="menu-title">General</span>
                                         <span class="menu-arrow"></span>
@@ -1103,7 +1115,7 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link active"
+                                            <a class="menu-link"
                                                 href="../../mahasiswa/general/biodata-mahasiswa.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
@@ -1141,7 +1153,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -1154,7 +1166,7 @@
                                     <!--begin:Menu sub-->
                                     <div class="menu-sub menu-sub-accordion">
                                         <!--begin:Menu item-->
-                                        <div class="menu-item">
+                                        <div class="menu-item active">
                                             <!--begin:Menu link-->
                                             <a class="menu-link" href="../../mahasiswa/akademik/kalender.html">
                                                 <span class="menu-bullet">
@@ -1244,94 +1256,78 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table table-rounded table-striped border gy-7 gs-7"
-                                        id="kt_presensi_table">
-                                        <thead>
-                                            <tr class="text-start text-gray-600 fw-bold text-uppercase">
-                                                <th style="width: 5%;">No</th>
-                                                <th style="width: 30%;">Mata Kuliah</th>
-                                                <th style="width: 15%;">Pertemuan</th>
-                                                <th style="width: 15%;">Tanggal</th>
-                                                <th style="width: 10%;">Alpha</th>
-                                                <th style="width: 10%;">Ijin</th>
-                                                <th style="width: 10%;">Sakit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="fw-semibold text-gray-600">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Algoritma & Pemrograman</td>
-                                                <td>Pertemuan 1</td>
-                                                <td>10/01/2023</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td><i class="ki-outline ki-check-circle fs-2 text-success"></i></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Algoritma & Pemrograman</td>
-                                                <td>Pertemuan 2</td>
-                                                <td>17/01/2023</td>
-                                                <td>-</td>
-                                                <td><i class="ki-outline ki-check-circle fs-2 text-success"></i></td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Struktur Data</td>
-                                                <td>Pertemuan 1</td>
-                                                <td>11/01/2023</td>
-                                                <td><i class="ki-outline ki-check-circle fs-2 text-success"></i></td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Struktur Data</td>
-                                                <td>Pertemuan 2</td>
-                                                <td>18/01/2023</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Basis Data</td>
-                                                <td>Pertemuan 1</td>
-                                                <td>12/01/2023</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Basis Data</td>
-                                                <td>Pertemuan 2</td>
-                                                <td>19/01/2023</td>
-                                                <td>-</td>
-                                                <td><i class="ki-outline ki-check-circle fs-2 text-success"></i></td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Jaringan Komputer</td>
-                                                <td>Pertemuan 1</td>
-                                                <td>13/01/2023</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Jaringan Komputer</td>
-                                                <td>Pertemuan 2</td>
-                                                <td>20/01/2023</td>
-                                                <td><i class="ki-outline ki-check-circle fs-2 text-success"></i></td>
-                                                <td>-</td>
-                                                <td>-</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="table-responsive">
+    <table class="table table-rounded table-striped border gy-7 gs-7" id="kt_presensi_table">
+        <thead>
+            <tr class="text-start text-gray-600 fw-bold text-uppercase">
+                <th style="width: 5%;">No</th>
+                <th style="width: 30%;">Mata Kuliah</th>
+                <th style="width: 15%;">Pertemuan</th>
+                <th style="width: 15%;">Tanggal</th>
+                <th style="width: 15%;">Keterangan</th>
+            </tr>
+        </thead>
+        <tbody class="fw-semibold text-gray-600">
+            <tr>
+                <td>1</td>
+                <td>Algoritma & Pemrograman</td>
+                <td>Pertemuan 1</td>
+                <td>10/01/2023</td>
+                <td><span class="badge badge-light-primary">Sakit</span></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Algoritma & Pemrograman</td>
+                <td>Pertemuan 2</td>
+                <td>17/01/2023</td>
+                <td><span class="badge badge-light-warning">Ijin</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Struktur Data</td>
+                <td>Pertemuan 1</td>
+                <td>11/01/2023</td>
+                <td><span class="badge badge-light-danger">Alpha</span></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Struktur Data</td>
+                <td>Pertemuan 2</td>
+                <td>18/01/2023</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Basis Data</td>
+                <td>Pertemuan 1</td>
+                <td>12/01/2023</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Basis Data</td>
+                <td>Pertemuan 2</td>
+                <td>19/01/2023</td>
+                <td><span class="badge badge-light-warning">Ijin</span></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Jaringan Komputer</td>
+                <td>Pertemuan 1</td>
+                <td>13/01/2023</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Jaringan Komputer</td>
+                <td>Pertemuan 2</td>
+                <td>20/01/2023</td>
+                <td><span class="badge badge-light-danger">Alpha</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
                                 </div>
                             </div>
                             <!--end::Content container-->
@@ -1345,21 +1341,21 @@
                         <div
                             class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
                             <div class="text-dark order-2 order-md-1">
-                                <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                                <a href="https://keenthemes.com" target="_blank"
-                                    class="text-gray-800 text-hover-primary">Keenthemes</a>
+                                <span class="text-muted fw-semibold me-1"></span>
+                                <a href="" target="_blank"
+                                    class="text-gray-800 text-hover-primary"></a>
                             </div>
                             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                                 <li class="menu-item">
-                                    <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+                                    <a href="" target="_blank" class="menu-link px-2">About</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="https://devs.keenthemes.com" target="_blank"
+                                    <a href="" target="_blank"
                                         class="menu-link px-2">Support</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="https://1.envato.market/EA4JP" target="_blank"
-                                        class="menu-link px-2">Purchase</a>
+                                    <a href="" target="_blank"
+                                        class="menu-link px-2">Social Media</a>
                                 </li>
                             </ul>
                         </div>

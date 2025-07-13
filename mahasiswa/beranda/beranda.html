@@ -1087,10 +1087,9 @@
                             <!--begin::Sidebar menu-->
                             <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false"
                                 class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary px-3 mb-5">
-                                <!--end:Menu item-->
-                                <div class="menu-item">
+                                <div class="menu-item here show">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="../../mahasiswa/beranda/beranda.html">
+                                    <a class="menu-link active" href="../../mahasiswa/beranda/beranda.html">
                                         <span class="menu-icon">
                                             <i class="ki-outline ki-home-2 fs-2"></i>
                                         </span>
@@ -1100,7 +1099,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -1166,9 +1165,9 @@
                                     <!--begin:Menu sub-->
                                     <div class="menu-sub menu-sub-accordion">
                                         <!--begin:Menu item-->
-                                        <div class="menu-item">
+                                        <div class="menu-item active">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link active" href="../../mahasiswa/akademik/kalender.html">
+                                            <a class="menu-link" href="../../mahasiswa/akademik/kalender.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1241,26 +1240,118 @@
                         <div id="kt_app_content" class="app-content flex-column-fluid">
                             <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid">
-                                <h2 class="text-dark fw-bold mb-5 text-center">Kalender Tahun Ajaran 2025/2026</h2>
+                                <h2 class="text-dark fw-bold mb-5 text-start">Selamat Datang</h2>
 
-                                <!-- Card untuk kalender -->
-                                <div class="card-body p-0">
-                                    <!-- Image kalender -->
-                                    <div class="text-center p-5">
-                                        <img src="../../assets/media/kalender/kalender-example.jpeg"
-                                            alt="Kalender Akademik 2025/2026" class="img-fluid rounded border"
-                                            style="max-height: 800px;">
+                                <!-- Card Informasi Mahasiswa dengan Foto -->
+                                <div class="card mb-5">
+                                    <div class="card-header">
+                                        <h3 class="card-title fw-bold">Informasi Mahasiswa</h3>
                                     </div>
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-start">
+                                            <!-- Foto Mahasiswa -->
+                                            <div class="me-10 mb-4">
+                                                <div class="symbol symbol-100px symbol-circle">
+                                                    <img src="/assets/media/avatars/300-1.jpg" alt="Foto Mahasiswa">
+                                                </div>
+                                            </div>
 
-                                    <!-- Tombol download -->
-                                    <div class="card-footer text-center py-4">
-                                        <a href="#" class="btn btn-success mt-5">
-                                            <i class="ki-duotone ki-exit-down fs-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i>
-                                            Download
-                                        </a>
+                                            <!-- Data Mahasiswa -->
+                                            <div class="flex-grow-1">
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fs-5 text-gray-800">
+                                                            <span class="fw-bold">Nama:</span> Muhammad Rizky Pratama
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fs-5 text-gray-800">
+                                                            <span class="fw-bold">NIM:</span> 202301001
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fs-5 text-gray-800">
+                                                            <span class="fw-bold">Program Studi:</span> S1 - Teknik
+                                                            Informatika
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fs-5 text-gray-800">
+                                                            <span class="fw-bold">Jurusan:</span> Teknologi Informasi
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fs-5 text-gray-800">
+                                                            <span class="fw-bold">Tahun Akademik:</span> 2023/2024 -
+                                                            Ganjil
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <div class="fs-5 text-gray-800">
+                                                            <span class="fw-bold">Status Mahasiswa:</span> Aktif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card Status Pembayaran -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title fw-bold">Status Pembayaran</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-rounded table-striped border gy-7 gs-7">
+                                                <thead>
+                                                    <tr class="text-start text-gray-600 fw-bold text-uppercase">
+                                                        <th style="width: 5%;">No</th>
+                                                        <th style="width: 30%;">Tahun Akademik</th>
+                                                        <th style="width: 30%;">Tagihan</th>
+                                                        <th style="width: 20%;">Jumlah</th>
+                                                        <th style="width: 25%;">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="fw-semibold text-gray-600">
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>2023/2024 - Ganjil</td>
+                                                        <td>Uang Kuliah Tunggal (UKT)</td>
+                                                        <td>Rp 4.500.000</td>
+                                                        <td>
+                                                            <span class="badge badge-light-success">Terbayar</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>2023/2024 - Ganjil</td>
+                                                        <td>Biaya Praktikum</td>
+                                                        <td>Rp 750.000</td>
+                                                        <td>
+                                                            <span class="badge badge-light-success">Terbayar</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>2023/2024 - Genap</td>
+                                                        <td>Uang Kuliah Tunggal (UKT)</td>
+                                                        <td>Rp 4.500.000</td>
+                                                        <td>
+                                                            <span class="badge badge-light-warning">Belum Dibayar</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1270,28 +1361,33 @@
                     </div>
                     <!--end::Content wrapper-->
 
+
                     <!--begin::Footer-->
                     <div id="kt_app_footer" class="app-footer">
                         <div
                             class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
                             <div class="text-dark order-2 order-md-1">
                                 <span class="text-muted fw-semibold me-1"></span>
-                                <a href="" target="_blank" class="text-gray-800 text-hover-primary"></a>
+                                <a href="" target="_blank"
+                                    class="text-gray-800 text-hover-primary"></a>
                             </div>
                             <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
                                 <li class="menu-item">
                                     <a href="" target="_blank" class="menu-link px-2">About</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="" target="_blank" class="menu-link px-2">Support</a>
+                                    <a href="" target="_blank"
+                                        class="menu-link px-2">Support</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="" target="_blank" class="menu-link px-2">Social Media</a>
+                                    <a href="" target="_blank"
+                                        class="menu-link px-2">Social Media</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <!--end::Footer-->
+
                 </div>
                 <!--end:::Main-->
             </div>
@@ -1324,7 +1420,6 @@
     <!-- 5. Aplikasi -->
     <script src="../../assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="../../assets/js/custom/utilities/modals/users-search.js"></script>
-    <script src="../../assets/js/custom/apps/mahasiswa/akademik/kalender.js"></script>
 </body>
 
 </html>

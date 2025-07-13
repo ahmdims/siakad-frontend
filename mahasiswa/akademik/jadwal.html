@@ -1087,12 +1087,23 @@
                             <!--begin::Sidebar menu-->
                             <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false"
                                 class="app-sidebar-menu-primary menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary px-3 mb-5">
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="../../mahasiswa/beranda/beranda.html">
+                                        <span class="menu-icon">
+                                            <i class="ki-outline ki-home-2 fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Beranda</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
-                                            <i class="ki-outline ki-home-2 fs-2"></i>
+                                            <i class="ki-outline ki-element-11 fs-2"></i>
                                         </span>
                                         <span class="menu-title">General</span>
                                         <span class="menu-arrow"></span>
@@ -1103,7 +1114,7 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link active"
+                                            <a class="menu-link"
                                                 href="../../mahasiswa/general/biodata-mahasiswa.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
@@ -1141,7 +1152,7 @@
                                 </div>
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
                                     <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -1154,9 +1165,9 @@
                                     <!--begin:Menu sub-->
                                     <div class="menu-sub menu-sub-accordion">
                                         <!--begin:Menu item-->
-                                        <div class="menu-item">
+                                        <div class="menu-item active">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link active" href="../../mahasiswa/akademik/kalender.html">
+                                            <a class="menu-link" href="../../mahasiswa/akademik/kalender.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1180,7 +1191,7 @@
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link" href="../../mahasiswa/akademik/jadwal.html">
+                                            <a class="menu-link active" href="../../mahasiswa/akademik/jadwal.html">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -1210,17 +1221,6 @@
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="../../mahasiswa/akademik/nilai.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">Nilai Mahasiswa</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
                                     </div>
                                     <!--end:Menu sub-->
                                 </div>
@@ -1242,12 +1242,14 @@
                             <div id="kt_app_content_container" class="app-container container-fluid">
                                 <h2 class="text-dark fw-bold mb-5">Jadwal Perkuliahan</h2>
                                 <div class="d-flex flex-wrap gap-4 mb-5">
-                                    <div class="fs-6 text-gray-600">
-                                        <span class="fw-semibold">Tahun Akademik:</span> 2023/2024 - Ganjil
-                                    </div>
-                                    <div class="fs-6 text-gray-600">
-                                        <span class="fw-semibold">Kelas:</span> A - Teknik Informatika
-                                    </div>
+                                     <div class="col-md-3">
+                                                <div class="fs-6 fw-semibold text-gray-600">Tahun Akademik</div>
+                                                <div class="fs-4 fw-bold text-gray-900">2023/2024 - Ganjil</div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="fs-6 fw-semibold text-gray-600">Kelas</div>
+                                                <div class="fs-4 fw-bold text-dark">A - Teknik Informatika</div>
+                                            </div>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-rounded table-striped border gy-7 gs-7"
@@ -1321,29 +1323,30 @@
                 <!--end::Content wrapper-->
 
                 <!--begin::Footer-->
-                <div id="kt_app_footer" class="app-footer">
-                    <div
-                        class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-                        <div class="text-dark order-2 order-md-1">
-                            <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                            <a href="https://keenthemes.com" target="_blank"
-                                class="text-gray-800 text-hover-primary">Keenthemes</a>
+                    <div id="kt_app_footer" class="app-footer">
+                        <div
+                            class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+                            <div class="text-dark order-2 order-md-1">
+                                <span class="text-muted fw-semibold me-1"></span>
+                                <a href="" target="_blank"
+                                    class="text-gray-800 text-hover-primary"></a>
+                            </div>
+                            <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+                                <li class="menu-item">
+                                    <a href="" target="_blank" class="menu-link px-2">About</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" target="_blank"
+                                        class="menu-link px-2">Support</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="" target="_blank"
+                                        class="menu-link px-2">Social Media</a>
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                            <li class="menu-item">
-                                <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="https://1.envato.market/EA4JP" target="_blank"
-                                    class="menu-link px-2">Purchase</a>
-                            </li>
-                        </ul>
                     </div>
-                </div>
-                <!--end::Footer-->
+                    <!--end::Footer-->
             </div>
             <!--end:::Main-->
         </div>

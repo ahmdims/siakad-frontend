@@ -20,19 +20,15 @@ var KTNilaiMahasiswa = function() {
         // Init datatable
         datatable = $(table).DataTable({
             "info": false,
+            "paging": false,
+            "lengthChange": false,
+             "searching": false, 
             'order': [],
             'pageLength': 10,
             "columnDefs": [
                 { orderable: false, targets: 0 },
                 { orderable: false, targets: 5 }
             ]
-        });
-    }
-
-    var handleSearchDatatable = function() {
-        const filterSearch = document.querySelector('[data-kt-nilai-table-filter="search"]');
-        filterSearch.addEventListener('keyup', function(e) {
-            datatable.search(e.target.value).draw();
         });
     }
 
@@ -87,7 +83,6 @@ var KTNilaiMahasiswa = function() {
             }
 
             initDatatable();
-            handleSearchDatatable();
             handleExportButtons();
             initSelect2();
         }
